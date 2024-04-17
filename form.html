@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+	<head>
+		<title>Sign up page</title>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="./style/mystyleForm.css">
+		
+		<script src="./scripts/checkInputData.js"> //completer dans le futur</script>
+	</head>
+	
+	<body>
+	
+		<h1>SignIn Form</h1>
+		<form action="savedb.php" method="post" enctype="multipart/form-data">
+			<fieldset>
+				
+					<legend><strong>Public info</strong></legend>
+					<br>
+				
+					<!-- Simple formulary which will send the signin data to the server if it meets
+						 the requirements for the enrollment -->
+					
+					<!-- Public information area-->
+					<label for="Nickname">Nickname</label> <br>
+					<input type="text" id="Nickname" name="nickname" placeholder="Nickname" required>
+					<br><br>
+			
+					<label for="email">Email</label> <br> 
+					<input type="email" id="email" name="email" placeholder="Email" required>
+					<abbr title="the email is unique in the data base">?</abbr>
+					<br><br>
+			
+					<label for="email">Confirmation email</label> <br>
+					<input type="email" id="email" name="email" placeholder="Confirm your email" required>
+					<br><br>
+			
+					<label for="birthday">Birth date</label> <br>
+					<input type="date" id="birthday" name="birthday">
+					<br><br>
+			
+					<label for="gender">Gender:</label> <br>
+					<input type="radio" name="gender" value ="man" >Man</input>
+					<input type="radio" name="gender" value ="woman">Woman</input>
+					<br><br>
+
+					<label for="gender">Looking for:</label> <br> <!-- lkf : looking for -->
+					<input type="checkbox" name="lkfgender[]" value="lkfman">Man</input>
+					<input type="checkbox" name="lkfgender[]" value = "lkfwoman">Woman</input>
+					<br><br>
+
+					<label for="Profession">Profession</label> <br>
+					<input list="text" placeholder="Profession" name="profession">
+					<br><br>
+
+					<label for="location">Location</label> <br>
+					<input list="text" placeholder="Location you re living in" name="location">
+					<br><br>
+
+					<label for="psituation">Personal and family situation</label> <br>
+					<textarea name="psituation" cols="30" rows="10" placeholder="single, no-kids, divorced, with kids"></textarea>
+					<br><br>
+
+					<label for="phys">physical description</label> <br>
+					<input list="text" placeholder="Physical description" name="physical_description">
+					<br><br>
+					
+					<label for="persoinformation">personal information</label> <br>
+					<textarea name="persoinformation" id="" name="persoinformation" cols="30" rows="10"></textarea>
+					<br><br>
+
+					<label>Pictures</label><br>
+				
+					<!-- following the example of some dating websites, pictures are required for singin -->
+					<input type="file" name="pic[]" id="" accept="image/*" multiple required>
+					
+			</fieldset>
+
+
+			<fieldset id="privFieldSet">
+				<!-- Private information area -->
+				<legend><strong>Private info</strong></legend>
+
+				<label for="prenom">Name</label> <br>
+					<input type="text" id="name" name="name" placeholder="Name" required>
+					<br><br>
+			
+					<label for="lname">Last name</label> <br>
+					<input type="text" id="lname" name="lname" placeholder="Last name" required>
+					<br><br>
+
+					<label for="adress">Address</label> <br>
+					<textarea id="adress" name="adress"></textarea>
+					<br><br>
+
+					<label for="password">Password</label><br>
+					<input type="password" name="password" placeholder="Input your password" required>
+					<br><br>
+					<label for="confpassword">Password confirmation</label><br>
+					<input type="password" name="confpassword" placeholder="Input your password again" required>
+					<br><br>
+			</fieldset>
+	
+			<input type="submit" value="Sign up" id="subbutton"  >
+		</form>
+	</body>
+	
+</html>

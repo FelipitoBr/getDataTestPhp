@@ -1,0 +1,24 @@
+#title
+{
+    text-align: center;
+}
+h1
+{
+    text-align: center;
+
+}
+fieldset
+{
+    display: inline-block;
+    margin-bottom: 5px;
+    width: 20%;
+}
+#privFieldSet
+{
+    position: absolute;
+
+}
+#subbutton
+{
+    width: 100%;
+}
