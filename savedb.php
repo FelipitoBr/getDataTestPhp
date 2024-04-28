@@ -14,7 +14,7 @@ function saveUserData($usrData)
     //the goal of putting the data between ""  is to use them as delimetors in the future
     foreach( $usrData as $key => $value )
     {
-        $finalData .= '"'.$value .'" ';
+        $finalData .=$value .' ';
     }
 
     //write and close file
@@ -24,13 +24,14 @@ function saveUserData($usrData)
 }
 function saveUserPhotos($usrName)
 {
+    $count = 1;
     if(isset($_FILES['pic'])) 
     {
 
         // Access the uploaded file details and check if path exists and creating it otherwise
         $picName = $_FILES['pic']['name'];
         $picError = $_FILES['pic']['error'];
-        $uploadPATH = "./database/users/userpics/".$usrName."/";
+        $uploadPATH = "./database/users/".$usrName."/";
         
         if(!file_exists($uploadPATH))
             mkdir($uploadPATH);
@@ -43,6 +44,8 @@ function saveUserPhotos($usrName)
                 $tmpName = $_FILES["pic"]["tmp_name"][$key];
                 $picName = basename($_FILES["pic"]["name"][$key]);
                 move_uploaded_file($tmpName, $uploadPATH.$picName);
+                rename($uploadPATH.$picName,$uploadPATH.$usrName.$count);
+                $count++;
             }
             else
             {
